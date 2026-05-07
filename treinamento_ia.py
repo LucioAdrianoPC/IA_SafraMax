@@ -13,7 +13,7 @@ PATH_TRAIN_LABELS = r'dataset\labels\train'
 @st.cache_resource
 def load_model():
     # Usando o seu melhor peso após o refino
-    return YOLO(r'runs\detect\train-15\weights\best.pt')
+    return YOLO(r'weights\best.pt')
 
 model = load_model()
 

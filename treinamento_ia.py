@@ -6,14 +6,14 @@ from PIL import Image
 import numpy as np
 
 # Configurações de Caminho - Ajuste se necessário
-PATH_TRAIN_IMAGES = r'dataset\images\train'
-PATH_TRAIN_LABELS = r'dataset\labels\train'
+PATH_TRAIN_IMAGES = 'dataset/images/train'
+PATH_TRAIN_LABELS = 'dataset/labels/train'
 
 # Carregamento do Modelo
 @st.cache_resource
 def load_model():
     # Usando o seu melhor peso após o refino
-    return YOLO(r'weights\best.pt')
+    return YOLO('weights/best.pt')
 
 model = load_model()
 

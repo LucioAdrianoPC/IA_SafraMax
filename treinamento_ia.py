@@ -6,14 +6,14 @@ from PIL import Image
 import numpy as np
 
 # Configurações de Caminho - Ajuste se necessário
-PATH_TRAIN_IMAGES = r'D:\projetos\SafraMax_IA\dataset\images\train'
-PATH_TRAIN_LABELS = r'D:\projetos\SafraMax_IA\dataset\labels\train'
+PATH_TRAIN_IMAGES = r'dataset\images\train'
+PATH_TRAIN_LABELS = r'dataset\labels\train'
 
 # Carregamento do Modelo
 @st.cache_resource
 def load_model():
     # Usando o seu melhor peso após o refino
-    return YOLO(r'D:\projetos\SafraMax_IA\runs\detect\train-15\weights\best.pt')
+    return YOLO(r'runs\detect\train-15\weights\best.pt')
 
 model = load_model()
 
@@ -25,7 +25,7 @@ uploaded_file = st.file_uploader("Escolha uma imagem de café...", type=["jpg", 
 
 if uploaded_file is not None:
     # Converter para formato OpenCV
-    image = Image.open(uploaded_file)
+    image = Image.open(uploaded_file).convert('RGB')
     img_array = np.array(image)
     
     # Executar Predição

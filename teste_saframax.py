@@ -2,10 +2,10 @@ from ultralytics import YOLO
 
 # 1. Carrega o novo peso gerado após as 300 épocas
 # Verifique se a pasta será 'train-6' ou similar
-model = YOLO(r'D:\projetos\SafraMax_IA\runs\detect\train-14\weights\best.pt')
+model = YOLO(r'runs\detect\train-14\weights\best.pt')
 
 # 2. Roda a predição
-results = model.predict(source=r'D:\projetos\SafraMax_IA\dataset\images\val\cafe_02.png', save=True, conf=0.25)
+results = model.predict(source=r'dataset\images\val\cafe_02.png', save=True, conf=0.25)
 
 # 3. Lógica de Contagem para o SafraMax
 for result in results:

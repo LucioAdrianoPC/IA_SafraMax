@@ -1,0 +1,8 @@
+path: D:/projetos/SafraMax_IA/dataset 
+train: images/train
+val: images/val
+
+names:
+  0: Fruto Verde
+  1: Fruto de Vez
+  2: Fruto Maduro
